@@ -32,7 +32,7 @@ const Navbar = () => {
         <IconContext.Provider value={{ color: 'white' }}>
             <div className='navbar'>
                 <div className='navbar-container container'>
-                    <Link className='navbar-logo' to='/'>
+                    <Link className='navbar-logo' to='/' onClick={closeMobileMenu}>
                         <MdFingerprint className='navbar-icon' />
                         LAVISH
                     </Link>
@@ -40,9 +40,9 @@ const Navbar = () => {
                         { isOpen ? <FaTimes /> : <FaBars />}
                     </div>
                     <ul className={isOpen ? 'nav-menu active' : 'nav-menu'}>
-                        <li className='nav-item'><Link to='/' className='nav-links'>Home</Link></li>
-                        <li className='nav-item'><Link to='/services' className='nav-links'>Services</Link></li>
-                        <li className='nav-item'><Link to='/products' className='nav-links'>Products</Link></li>
+                        <li className='nav-item'><Link to='/' className='nav-links' onClick={closeMobileMenu}>Home</Link></li>
+                        <li className='nav-item'><Link to='/services' className='nav-links' onClick={closeMobileMenu}>Services</Link></li>
+                        <li className='nav-item'><Link to='/products' className='nav-links' onClick={closeMobileMenu}>Products</Link></li>
                         <li className='nav-btn'>
                             {button ? (
                                 <Link to='/sign-up' className='btn-link'><Button buttonStyle='btn--outline'>SIGN UP</Button></Link>
